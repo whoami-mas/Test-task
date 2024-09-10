@@ -1,0 +1,35 @@
+﻿<Window x:Class="Plane.HelpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Plane"
+        mc:Ignorable="d"
+        Title="Help" Height="450" Width="400" ResizeMode="NoResize">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0.1,1" EndPoint="0.2,0">
+                <GradientStop Color="#7474BF" Offset="0.4" />
+                <GradientStop Color="#348AC7" Offset="2" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock FontSize="20" Grid.ColumnSpan="3" Foreground="White"
+                   Grid.RowSpan="2" TextWrapping="Wrap">-Для открытия файла существует функция "Открыть" в меню "Файл".
+        После чего открывается иерархия из XML документа.
+        </TextBlock>
+        <TextBlock FontSize="20" Grid.ColumnSpan="3" Foreground="White"
+                   Grid.Row="2" TextWrapping="Wrap">Разработчик: Бушков Илья Алексеевич<LineBreak/>
+            Дата: 06.09.2024<LineBreak/>
+        </TextBlock>
+    </Grid>
+</Window>

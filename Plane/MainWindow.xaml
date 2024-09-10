@@ -1,0 +1,69 @@
+﻿<Window x:Class="Plane.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Plane"
+        mc:Ignorable="d"
+        Title="Plane" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0.1,1" EndPoint="0.2,0">
+                <GradientStop Color="#7474BF" Offset="0.4" />
+                <GradientStop Color="#348AC7" Offset="2" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <Menu Grid.Row="0" Grid.ColumnSpan="6" FontSize="14">
+            <Menu.Background>
+                <SolidColorBrush Color="Transparent"/>
+            </Menu.Background>
+            <MenuItem Header="Файл">
+                <MenuItem x:Name="openFileBtn" Header="Открыть" 
+                          Click="openFileBtn_Click"/>
+            </MenuItem>
+            <MenuItem x:Name="helpBtn" Header="Помощь" 
+                          Click="helpBtn_Click"/>
+        </Menu>
+        <Border Grid.Row="1" Grid.Column="1"
+                    Grid.RowSpan="3"
+                CornerRadius="10"
+                BorderBrush="Transparent">
+            <Border.Background>
+                <SolidColorBrush Color="White"/>
+            </Border.Background>
+            <TreeView x:Name ="ItemsTV" Grid.Row="1"
+                  FontSize="15"
+                  SelectedItemChanged="ItemsTV_SelectedItemChanged">
+                <TreeView.Background>
+                    <SolidColorBrush Color="Transparent"/>
+                </TreeView.Background>
+            </TreeView>
+        </Border>
+        
+
+        <TextBlock x:Name="InfoTB" Grid.Row="1" Grid.RowSpan="3"
+                   Grid.Column="3" Grid.ColumnSpan="2"
+                   Text="{Binding Info}"
+                   FontSize="20" TextWrapping="Wrap"
+                   Foreground="White">
+                    
+        </TextBlock>
+    </Grid>
+</Window>
